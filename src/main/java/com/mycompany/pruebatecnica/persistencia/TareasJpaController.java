@@ -20,6 +20,17 @@ import javax.persistence.criteria.Root;
  *
  * @author benyi
  */
+/*
+Controller que tiene todos los metodos como edit, destroy, create, find etc.
+es de donde esta agarrando los metodos la controladora de persistencia
+
+Mapeo: 
+Metodos del main llaman a los metodos que estan en la logica en la controladora
+La controladora de la logica manda llamar a los metodos que estan en la controladora de persistencia
+La controladora de persistencia manda llamar a los metodos que estan aqui en el controller
+
+En cada una de estas se crea un objeto de dicha controladora que esta debajo de la misma
+*/
 public class TareasJpaController implements Serializable {
 
     public TareasJpaController(EntityManagerFactory emf) {

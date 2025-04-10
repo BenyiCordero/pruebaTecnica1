@@ -15,28 +15,40 @@ import javax.persistence.TemporalType;
  *
  * @author benyi
  */
+/*
+Clase principal donde hacemos el ORM mapeo de nuestra entidad e implementamos 
+los metodos para crear los objetos y asignamos atributos a la clase, junto con 
+los getters y setters
+*/
+
+//Hacemos el mapeo que esta sera una entidad
 @Entity
 public class Tareas implements Serializable {
-    
+    //Marcamos el parametro que sea nuestra primary Key
     @Id
-    @GeneratedValue (strategy=GenerationType.IDENTITY)
+    @GeneratedValue (strategy=GenerationType.IDENTITY) //Hacemos una generatedValue que sea incremental i+1
     private int id;
+    //Definimos los parametros basicos de nuestra entidad
     @Basic
     private String descripcion;
     private String estado;
-    @Temporal (TemporalType.TIMESTAMP)
+    //Mapeamos y definimos que sera una fecha
+    @Temporal (TemporalType.TIMESTAMP) //Acepta dia, mes, anio, hora, minuto
     private Date fechaLimite;
-
+    
+    //Metodo para crear tareas vacias
     public Tareas() {
     }
-
+    
+    //Metodo para crear tareas con todos los atributos
     public Tareas(int id, String descripcion, String estado, Date fechaLimite) {
         this.id = id;
         this.descripcion = descripcion;
         this.estado = estado;
         this.fechaLimite = fechaLimite;
     }
-
+    
+    //Getters y setters
     public int getId() {
         return id;
     }
@@ -69,9 +81,10 @@ public class Tareas implements Serializable {
         this.fechaLimite = fechaLimite;
     }
 
+    //Metodo to string para poder mostrar los formatos 
     @Override
     public String toString() {
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm"); //Muestra la fecha mas ordenada
         return "Tareas{" + "id=" + id + ", descripcion=" + descripcion + ", estado=" + estado + ", fechaLimite=" + sdf.format(fechaLimite) + '}';
     }
     
