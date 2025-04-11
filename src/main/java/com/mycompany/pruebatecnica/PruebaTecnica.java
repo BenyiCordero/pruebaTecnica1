@@ -26,7 +26,7 @@ public class PruebaTecnica {
     public static Date fecha; //Formato de la fecha DATE que sera implementada a la base de datos
     
     //Un metodo para mostrar el menu y que ingrese una opcion
-    public static int menu ()
+    public static void menu ()
     {
         System.out.println("----MENU----");
         System.out.println("1---Crear Tarea");
@@ -36,7 +36,6 @@ public class PruebaTecnica {
         System.out.println("5---Eliminar Tarea");
         System.out.println("6---Salir");
         opcion = teclado.nextInt();
-        return opcion;
     }
     
     //Metodo para crear una tarea
@@ -84,7 +83,7 @@ public class PruebaTecnica {
         Tareas tareaBusqueda = control.traerTarea(id); //Creamos una nueva tarea de ayuda y llamamos a nuestra controladora y el metodo en ella de traer tarea
         if (tareaBusqueda != null)
         {
-        System.out.println(tareaBusqueda.toString()); //Si existe la mostramos con el metodo toString
+        System.out.println(tareaBusqueda); //Si existe la mostramos con el metodo toString
         }
     }
     

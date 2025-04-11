@@ -85,7 +85,7 @@ public class Tareas implements Serializable {
     @Override
     public String toString() {
         SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy HH:mm"); //Muestra la fecha mas ordenada
-        return "Tareas{" + "id=" + id + ", descripcion=" + descripcion + ", estado=" + estado + ", fechaLimite=" + sdf.format(fechaLimite) + '}';
+        return   "id=" + id + ", descripcion=" + descripcion + ", estado=" + estado + ", fechaLimite=" + sdf.format(fechaLimite);
     }
     
 }
